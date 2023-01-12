@@ -82,7 +82,7 @@ class Home extends StatelessWidget {
                       elevation: 1,
                       expansionCallback: (int index, bool isExpanded) {
                         st(() {
-                          data[index].isExpanded = !isExpanded;
+                          data[index].isExpanded = isExpanded;
                         });
                       },
                       children: data.map<ExpansionPanel>((Item item) {
@@ -116,83 +116,84 @@ class Home extends StatelessWidget {
                                     subtitle: Text(
                                         "₹ ${item.expandedValue[i].price}" ??
                                         ""),
-                                    trailing: Container(
-                                      height: D.Hight100 / 3,
-                                      width: D.Hight100,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                            D.Hight20),
-                                        border: Border.all(
-                                            color: Colors.orange),
-                                      ),
-                                      child:Obx(() => cartitem == 0
-                                          ?  Center(
-                                          child: InkWell(onTap: (){
+                                    trailing: InkWell(onTap: (){
 
-                                            cartitem++;
-                                            _controller
-                                                .InCartItem(
-                                                true,
-                                                item.expandedValue[
-                                                i]);
-
-                                            },
-                                            child: const Text(
+                                      if(cartitem==0) {
+                                        cartitem++;
+                                        _controller
+                                            .InCartItem(
+                                            true,
+                                            item.expandedValue[
+                                            i]);
+                                      }
+                                    },
+                                      child: Container(
+                                        height: D.Hight100 / 3,
+                                        width: D.Hight100,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                              D.Hight20),
+                                          border: Border.all(
+                                              color: Colors.orange),
+                                        ),
+                                        child:Obx(() => cartitem == 0
+                                            ?  const Center(
+                                            child: Text(
                                               "Add",
                                               style: TextStyle(
                                                   fontWeight:
                                                   FontWeight.bold,
                                                   color: Colors.orange),
-                                            ),
-                                          ))
-                                          : Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .spaceEvenly,
-                                        children: [
-                                          InkWell(
-                                              onTap: () {
-                                                cartitem.value++;
-                                                _controller
-                                                  .InCartItem(
-                                                  true,
-                                                  item.expandedValue[
-                                                  i]);},
-                                              child: const Icon(
-                                                Icons.add,
-                                                color: Colors.orange,
-                                              )),
-                                          CircleAvatar(
-                                              backgroundColor:
-                                              Colors.orange,
-                                              radius: D.Hight30 / 2,
-                                              child: Text(cartitem.value
-                                                  .toString(),
-                                                style: const TextStyle(
-                                                    color: Colors
-                                                        .white),
-                                              )),
-                                          InkWell(
-                                              onTap: (){
-                                                cartitem.value--;
-                                                _controller
+                                            ))
+                                            : Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .spaceEvenly,
+                                          children: [
+                                            InkWell(
+                                                onTap: () {
+                                                  cartitem.value++;
+                                                  _controller
                                                     .InCartItem(
-                                                    false,
+                                                    true,
                                                     item.expandedValue[
                                                     i]);},
-                                              child: const Icon(
-                                                Icons.remove,
-                                                color: Colors.orange,
-                                              ))
-                                        ],
-                                      ),)
-                                      
-                                      
+                                                child: const Icon(
+                                                  Icons.add,
+                                                  color: Colors.orange,
+                                                )),
+                                            CircleAvatar(
+                                                backgroundColor:
+                                                Colors.orange,
+                                                radius: D.Hight30 / 2,
+                                                child: Text(cartitem.value
+                                                    .toString(),
+                                                  style: const TextStyle(
+                                                      color: Colors
+                                                          .white),
+                                                )),
+                                            InkWell(
+                                                onTap: (){
+                                                  cartitem.value--;
+                                                  _controller
+                                                      .InCartItem(
+                                                      false,
+                                                      item.expandedValue[
+                                                      i]);},
+                                                child: const Icon(
+                                                  Icons.remove,
+                                                  color: Colors.orange,
+                                                ))
+                                          ],
+                                        ),)
+
+
+                                      ),
                                     ),
                                   );
                                 }),
                           ),
-                          isExpanded: item.isExpanded,
+                          isExpanded: !item.isExpanded,
                         );
                       }).toList(),
                     );
@@ -210,7 +211,8 @@ class Home extends StatelessWidget {
                     Get.to( Checkout(),transition: Transition.leftToRightWithFade);
                   }
                 },
-                  child: Container(margin: EdgeInsets.symmetric(horizontal: D.Hight20),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: D.Hight20),
                     height: D.Hight100 / 1.5,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
