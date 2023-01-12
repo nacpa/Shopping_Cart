@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopping_cart/Controller/CartController.dart';
 
 import '../Const/Dimension/Dimension.dart';
@@ -37,7 +38,7 @@ class Home extends StatelessWidget {
                 Text(
                   "My Cart",
                   style: TextStyle(
-                      color: Colors.blueGrey,
+                      color: Colors.black,
                       fontSize: D.Hight20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -46,18 +47,17 @@ class Home extends StatelessWidget {
                         Icon(
                           Icons.shopping_cart,
                           size: D.Hight30,
-                          color: Colors.green.shade300,
+                          color: Colors.black54,
                         ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: CircleAvatar(
-                            backgroundColor: Colors.transparent,
+                        Positioned(top: 0,right: 0,
+                          child:_controller.items.length!=0? CircleAvatar(
+                            backgroundColor: Colors.orange,
                             radius: 10,
                             child: Text(
                               _controller.items.length.toString(),
-                              style: const TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
                             ),
-                          ),
+                          ):Container(),
                         ),
                       ],
                     ))
@@ -67,6 +67,9 @@ class Home extends StatelessWidget {
         ),
         body: Stack(
           children: [
+            Opacity(opacity: 0.1,
+            child: Container(color: Colors.grey.shade100,
+              child: Lottie.network("https://assets7.lottiefiles.com/packages/lf20_13qczqum.json"),)),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 3),
               child: ListView(
@@ -110,8 +113,8 @@ class Home extends StatelessWidget {
                                   return ListTile(
                                     title:
                                         Text(item.expandedValue[i].name ?? ""),
-                                    subtitle: Text(item.expandedValue[i].price
-                                            .toString() ??
+                                    subtitle: Text(
+                                        "₹ ${item.expandedValue[i].price}" ??
                                         ""),
                                     trailing: Container(
                                       height: D.Hight100 / 3,
@@ -207,12 +210,12 @@ class Home extends StatelessWidget {
                     Get.to( Checkout(),transition: Transition.leftToRightWithFade);
                   }
                 },
-                  child: Container(
+                  child: Container(margin: EdgeInsets.symmetric(horizontal: D.Hight20),
                     height: D.Hight100 / 1.5,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
                       color: Colors.orange,
-                      borderRadius: BorderRadius.circular(D.Hight100),
+                      borderRadius: BorderRadius.circular(D.Hight20),
                       boxShadow: [
                         BoxShadow(
                             color: Colors.orange.shade50,
@@ -225,7 +228,7 @@ class Home extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.end
+                          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center
                             ,
                             children: [
                               Icon(Icons.lock,color: Colors.white,size: D.Hight30,),

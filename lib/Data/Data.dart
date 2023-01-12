@@ -27,16 +27,16 @@ String JsonString='''
   "Popular Item": [
     {
       "name": "Veg Biryani",
-      "price": 100,
+      "price": 99,
       "instock": true
     },
     {
       "name": "Pizza Burger",
-      "price": 125,
+      "price": 79,
       "instock": true
     },
     {
-      "name": "Veg Noodles",
+      "name":  "Veg Noodles",
       "price": 149,
       "instock": true
     },
@@ -67,7 +67,7 @@ String JsonString='''
     },
     {
       "name": "Cobb Salad",
-      "price": 125,
+      "price": 199,
       "instock": true
     }
     
@@ -80,7 +80,7 @@ String JsonString='''
     },
     {
       "name": "veg Manchurian",
-      "price": 125,
+      "price": 129,
       "instock": true
     },
     {
@@ -94,50 +94,50 @@ String JsonString='''
   "Soups": [
     {
       "name": "Hot n Sour",
-      "price": 100,
+      "price": 99,
       "instock": true
     },
     {
       "name": "Tomato Soup",
-      "price": 100,
+      "price": 69,
       "instock": true
     },
     {
       "name": "Corn Soup",
-      "price": 125,
+      "price": 119,
       "instock": true
     },
     {
-      "name": "MushroomSoup",
+      "name": "Mushroom Soup",
       "price": 149,
       "instock": true
     },
     
     {
       "name": "Mix Veg Soup",
-      "price": 256,
+      "price": 119,
       "instock": true
     }
   ],
   "Tandori": [
     {
       "name": "Plain Tandori Roti",
-      "price": 100,
+      "price": 19,
       "instock": true
     },
     {
       "name": "Butter Tandori Roti",
-      "price": 100,
+      "price": 23,
       "instock": true
     },
     {
       "name": "Tandoori butter Nan",
-      "price": 65,
+      "price": 49,
       "instock": true
     },
     {
       "name": "Tandoori Chai",
-      "price": 35,
+      "price": 39,
       "instock": true
     }
  
@@ -145,22 +145,22 @@ String JsonString='''
   "South Indian": [
     {
       "name": "Plain Dosa",
-      "price": 200,
+      "price": 199,
       "instock": true
     },
     {
       "name": "Masala Dosa",
-      "price": 250,
+      "price": 249,
       "instock": true
     },
     {
       "name": "Paneer Dosa",
-      "price": 200,
+      "price": 299,
       "instock": true
     },
     {
       "name": "Idli with sambhar",
-      "price": 200,
+      "price": 199,
       "instock": true
     }
   ]
