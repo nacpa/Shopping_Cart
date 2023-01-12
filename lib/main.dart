@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopping_cart/Screeens/OrderPlaced.dart';
 
 import 'Controller/CartController.dart';
 import 'Dependecies/init.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
 
       home:Splash(),
+      // home:OrderPlaced(),
     );
   }
 }
