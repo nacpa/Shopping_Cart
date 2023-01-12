@@ -125,6 +125,7 @@ class Home extends StatelessWidget {
                                       child:Obx(() => cartitem == 0
                                           ?  Center(
                                           child: InkWell(onTap: (){
+
                                             cartitem++;
                                             _controller
                                                 .InCartItem(
@@ -162,15 +163,11 @@ class Home extends StatelessWidget {
                                               backgroundColor:
                                               Colors.orange,
                                               radius: D.Hight30 / 2,
-                                              child: InkWell(onTap: (){
-                                                cartitem.value++;
-                                              },
-                                                child: Text(cartitem.value
-                                                    .toString(),
-                                                  style: const TextStyle(
-                                                      color: Colors
-                                                          .white),
-                                                ),
+                                              child: Text(cartitem.value
+                                                  .toString(),
+                                                style: const TextStyle(
+                                                    color: Colors
+                                                        .white),
                                               )),
                                           InkWell(
                                               onTap: (){
@@ -207,7 +204,7 @@ class Home extends StatelessWidget {
                 right: D.Hight10,
                 child: InkWell(onTap: (){
                   if(_controller.items.isNotEmpty){
-                    Get.to(const Checkout());
+                    Get.to( Checkout(),transition: Transition.leftToRightWithFade);
                   }
                 },
                   child: Container(

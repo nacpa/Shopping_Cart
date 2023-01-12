@@ -33,7 +33,7 @@ String JsonString='''
     {
       "name": "Pizza Burger",
       "price": 125,
-      "instock": false
+      "instock": true
     },
     {
       "name": "Veg Noodles",
@@ -105,7 +105,7 @@ String JsonString='''
     {
       "name": "Corn Soup",
       "price": 125,
-      "instock": false
+      "instock": true
     },
     {
       "name": "MushroomSoup",
@@ -123,7 +123,7 @@ String JsonString='''
     {
       "name": "Plain Tandori Roti",
       "price": 100,
-      "instock": false
+      "instock": true
     },
     {
       "name": "Butter Tandori Roti",
