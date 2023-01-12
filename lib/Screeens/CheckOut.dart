@@ -44,7 +44,7 @@ class Checkout extends StatelessWidget {
                     topRight: Radius.circular(D.Hight20))),
             child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: D.Hight20),
+                padding: EdgeInsets.only(bottom: D.Hight100,left: D.Hight20,right: D.Hight20),
                 itemCount: _controller.check.length,
                 itemBuilder: (context, i) {
                   print(_controller.check.keys.length,);
@@ -99,7 +99,8 @@ class Checkout extends StatelessWidget {
                   _controller.placeorder();
 
                 },
-                  child: Container(margin: EdgeInsets.symmetric(horizontal: D.Hight20),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: D.Hight30),
                     height: D.Hight100 / 1.5,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
