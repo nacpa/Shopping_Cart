@@ -150,7 +150,7 @@ class Home extends StatelessWidget {
                                           MainAxisAlignment
                                               .spaceEvenly,
                                           children: [
-                                            InkWell(
+                                            GestureDetector(
                                                 onTap: () {
                                                   cartitem.value++;
                                                   _controller
@@ -172,7 +172,7 @@ class Home extends StatelessWidget {
                                                       color: Colors
                                                           .white),
                                                 )),
-                                            InkWell(
+                                            GestureDetector(
                                                 onTap: (){
                                                   cartitem.value--;
                                                   _controller
